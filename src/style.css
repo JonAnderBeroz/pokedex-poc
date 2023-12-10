@@ -46,7 +46,7 @@ li {
   --color-1:#e8e0c0;
   --color-2: #d0c8b8;
   --color-3: #b8b0b8;
-  --right-pos: 17vw;
+  --right-pos: 225px;
   --offsetRight: calc(20px * abs(var(--index) - var(--activeIndex)));
   --offsetTop: calc(40px * calc(var(--index) - var(--activeIndex)));
   align-items: center;
