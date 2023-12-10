@@ -1,0 +1,85 @@
+@import url('./water.css');
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src:
+    url("./fonts/PressStart2P-Regular.woff2") format("woff2"),
+    url("./fonts/PressStart2P-Regular.woff") format("woff")
+}
+
+
+
+body {
+  font-family: "Press Start 2P";
+  font-size: 14px;
+  overflow: hidden;
+  image-rendering: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.pokeball {
+  position: absolute;
+  right: -175px;
+}
+
+ul {
+  gap: 1rem;
+  height: 100vh;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  --active-pos: calc(50vh - 20px);
+  --color-1:#e8e0c0;
+  --color-2: #d0c8b8;
+  --color-3: #b8b0b8;
+  --right-pos: 17vw;
+  --offsetRight: calc(20px * abs(var(--index) - var(--activeIndex)));
+  --offsetTop: calc(40px * calc(var(--index) - var(--activeIndex)));
+  align-items: center;
+  background-color: var(--color-1, #b8b0b8);
+  border-radius: 200px 65px 65px 200px;
+  border: 1px solid green;
+  color: black;
+  display: flex;
+  font-weight: 700;
+  height: 35px;
+  justify-content: center;
+  right: calc(var(--right-pos) - var(--offsetRight));
+  position: absolute;
+  top: calc(var(--active-pos) + var(--offsetTop));
+  width: 240px;
+}
+
+.active {
+  background-color: #f8f8c0;
+  right: var(--right-pos);
+  top: var(--active-pos);
+}
+
+.active::before {
+  background-color: #f8e8b0;
+}
+
+li::before {
+  background-color: #e8d0b0;
+  border-radius:50%;
+  content: '';
+  height: 25px;
+  left: 5px;
+  position: absolute;
+  width: 25px;
+}
